@@ -1,6 +1,7 @@
 package com;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +19,7 @@ public class CustomerAPI extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
     
-	Customer itemObj = new Customer(); 
+	Customer customerObj = new Customer(); 
 	
     public CustomerAPI() {
         super();
@@ -31,7 +32,7 @@ public class CustomerAPI extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			 throws ServletException, IOException
 	{
-		String output = itemObj.insertCustomer(
+		String output = customerObj.insertCustomer(
 				            request.getParameter("CustomerAcNo"),
 							request.getParameter("CustomerName"),
 							request.getParameter("NIC"),
@@ -76,7 +77,7 @@ public class CustomerAPI extends HttpServlet
 			 throws ServletException, IOException
 	{
 		Map paras = getParasMap(request);
-		String output = itemObj.updateCustomer(
+		String output = customerObj.updateCustomer(
 				                           paras.get("hidCustomerIDSave").toString(),
 										   paras.get("CustomerAcNo").toString(),
 										   paras.get("CustomerName").toString(),
@@ -94,7 +95,7 @@ public class CustomerAPI extends HttpServlet
 			 throws ServletException, IOException
 	{
 		Map paras = getParasMap(request);
-		String output = itemObj.deleteCustomer(paras.get("itemID").toString());
+		String output = customerObj.deleteCustomer(paras.get("ElectricityAcNo").toString());
 		response.getWriter().write(output);
 	}
 	

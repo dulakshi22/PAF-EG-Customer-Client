@@ -10,7 +10,7 @@ public class Customer
 		
 		try
 		{
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
  
 			con = DriverManager.getConnection(
 					"jdbc:mysql://127.0.0.1:3306/ecustomerdb","root", "");
@@ -47,14 +47,14 @@ public class Customer
 	        // iterate through the rows in the result set
 	        while (rs.next())
 	        {
-	          String electricityAcNo = Integer.toString(rs.getInt("electricityAcNo")); 
-	          String customerAcNo = rs.getString("customerAcNo");
-	          String customerName = rs.getString("customerName");
-	          String nic = rs.getString("nic");
-	          String address = rs.getString("address");
-	          String phonenumber = rs.getString("phonenumber");
-	          String email = rs.getString("email");
-	          String province = rs.getString("province");
+	          String electricityAcNo = Integer.toString(rs.getInt("ElectricityAcNo")); 
+	          String customerAcNo = rs.getString("CustomerAcNo");
+	          String customerName = rs.getString("CustomerName");
+	          String nic = rs.getString("NIC");
+	          String address = rs.getString("Address");
+	          String phonenumber = rs.getString("PhoneNumber");
+	          String email = rs.getString("Email");
+	          String province = rs.getString("Province");
 	          
 	          
 	        // Add a row into the html table
@@ -68,11 +68,19 @@ public class Customer
 	          output += "<td>" + province + "</td>";
 	          
 	          //buttons
-	          output += "<td><input name='btnUpdate' " + " type='button' value='Update'></td>" + "<td><form method='post' action='customers.jsp'>" + "<input name='btnRemove' " + " type='submit' value='Remove'>" + "<input name='electricityAcNo' type='hidden' " + " value='" + electricityAcNo + "'>" + "</form></td></tr>"; } con.close();
+	          output += "<td><input name='btnUpdate' " + " type='button' value='Update'></td>" + "<td><form method='post' action='Customers.jsp'>" + "<input name='btnRemove' " + " type='submit' value='Remove'>" + "<input name='electricityAcNo' type='hidden' " + " value='" + electricityAcNo + "'>" + "</form></td></tr>"; } con.close();
 	          
+	          //output += "<td><input name='btnUpdate' type='button' value='Update' "
+	        		 // + "class='btnUpdate btn btn-secondary' data-electricityAcNo='" + electricityAcNo + "'></td>"
+	        		//  + "<td><input name='btnRemove' type='button' value='Remove' "
+	        		//  + "class='btnRemove btn btn-danger' data-electricityAcNo='" + electricityAcNo + "'></td></tr>";
+	         
+	        
 	          //Complete the html table
 	          output += "</table>";
-	          }
+	        
+	        
+		}
 	        
 	          catch (Exception e)
 	          {

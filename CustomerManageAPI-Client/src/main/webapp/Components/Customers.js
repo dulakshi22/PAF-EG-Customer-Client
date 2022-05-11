@@ -90,7 +90,7 @@ function onCustomerSaveComplete(response, status)
  		{
  			url : "CustomerAPI",
  			type : "DELETE",
- 			data : "electricityAcNo=" + $(this).data("electricityAcNo"),
+ 			data : "ElectricityAcNo=" + $(this).data("ElectricityAcNo"),
  			dataType : "text",
  			complete : function(response, status)
  			{
@@ -131,40 +131,45 @@ function onCustomerSaveComplete(response, status)
 	
 
 	// CLIENT-MODEL================================================================
-	function validateItemForm()
+	function validateCustomerForm()
 	{
 		// CODE
-		if ($("#itemCode").val().trim() == "")
+		if ($("#CustomerAcNo").val().trim() == "")
 		{
- 			return "Insert Item Code.";
+ 			return "Insert Customer Account Number.";
  		}
 
 		// NAME
-		if ($("#itemName").val().trim() == "")
+		if ($("#CustomerName").val().trim() == "")
  		{
- 			return "Insert Item Name.";
+ 			return "Insert Customer Name.";
  		}
 
 		// PRICE-------------------------------
-		if ($("#itemPrice").val().trim() == "")
+		if ($("#NIC").val().trim() == "")
  		{
- 			return "Insert Item Price.";
+ 			return "Insert Customer NIC.";
  		}
- 		
-		// is numerical value
-		var tmpPrice = $("#itemPrice").val().trim();
-		if (!$.isNumeric(tmpPrice))
-		{
- 			return "Insert a numerical value for Item Price.";
- 		}
- 		
-		// convert to decimal price
-		$("#itemPrice").val(parseFloat(tmpPrice).toFixed(2));
 
 		// DESCRIPTION------------------------
-		if ($("#itemDesc").val().trim() == "")
+		if ($("#Address").val().trim() == "")
 		{
- 			return "Insert Item Description.";
+ 			return "Insert Customer Address.";
+ 		}
+ 		// DESCRIPTION------------------------
+		if ($("#PhoneNumber").val().trim() == "")
+		{
+ 			return "Insert Phone Number.";
+ 		}
+ 		// DESCRIPTION------------------------
+		if ($("#Email").val().trim() == "")
+		{
+ 			return "Insert Email.";
+ 		}
+ 		// DESCRIPTION------------------------
+		if ($("#Province").val().trim() == "")
+		{
+ 			return "Insert Province.";
  		}
 
 		return true;

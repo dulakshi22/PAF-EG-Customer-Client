@@ -15,29 +15,29 @@ pageEncoding="ISO-8859-1"%>
 
 <div class="container"><div class="row"><div class="col-6">
 
-	<h1>Customers Management </h1>
+	<h1>Customer Management </h1>
 
-	<form id="formItem" name="formItem">
+	<form id="formCustomer" name="formCustomer">
  		Customer Account No:
- 		<input id="CustomerAcNo" name="customerAcNo" type="text" class="form-control form-control-sm">
+ 		<input id="CustomerAcNo" name="CustomerAcNo" type="text" class="form-control form-control-sm">
  		<br> 
  		Customer name:
-		<input id="CustomerName" name="customerName" type="text" class="form-control form-control-sm">
+		<input id="CustomerName" name="CustomerName" type="text" class="form-control form-control-sm">
  		<br> 
  		NIC:
- 		<input id="NIC" name="nic" type="text" class="form-control form-control-sm">
+ 		<input id="NIC" name="NIC" type="text" class="form-control form-control-sm">
  		<br> 
  		Address:
-		<input id="Address" name="address" type="text" class="form-control form-control-sm">
+		<input id="Address" name="Address" type="text" class="form-control form-control-sm">
  		<br>
  		Phone Number:
-		<input id="PhoneNumber" name="phonenumber" type="text" class="form-control form-control-sm">
+		<input id="PhoneNumber" name="PhoneNumber" type="text" class="form-control form-control-sm">
  		<br>
  		E-mail:
-		<input id="Email" name="email" type="text" class="form-control form-control-sm">
+		<input id="Email" name="Email" type="text" class="form-control form-control-sm">
  		<br>
  		Province:
-		<input id="Province" name="province" type="text" class="form-control form-control-sm">
+		<input id="Province" name="Province" type="text" class="form-control form-control-sm">
  		<br>
  		
  		<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
@@ -48,7 +48,7 @@ pageEncoding="ISO-8859-1"%>
 	<div id="alertError" class="alert alert-danger"></div>
 
 	<br>
-	<div id="divItemsGrid">
+	<div id="divCustomerGrid">
  		<%
  			Customer customerObj = new Customer();
  			out.print(customerObj.readCustomer());
